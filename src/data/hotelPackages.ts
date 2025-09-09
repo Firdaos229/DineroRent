@@ -1,0 +1,58 @@
+import { IHotelRoom } from "@/types/hotel-d-t";
+
+export const hotelPackages: IHotelRoom[] = [
+  {
+    id: "1",
+    name: "Luxury Suite",
+    address: "123 Luxury St.",
+    city: "Paris",
+    countryCode: "FR",
+    highRate: 300,
+    lowRate: 150,
+    location: { latitude: 48.8566, longitude: 2.3522 },
+    destination: { _id: "1", name: "Paris" },
+    propertyCategory: 5,
+    category: "Luxury",  // Ajout de la catégorie ici
+    shortDescription: "A luxurious suite in the heart of Paris.",
+    thumbNailUrl: "/images/hotels/hotel1.jpg",
+    gallery: ["/images/hotels/hotel1_1.jpg", "/images/hotels/hotel1_2.jpg"],
+    overview: "Experience luxury with stunning views and world-class amenities.",
+    amenities: [
+      { id: "1", name: "Free Wi-Fi", instructions: "Log in with your room number and last name.", hours: "24/7" },
+      { id: "2", name: "Breakfast Included", instructions: "Enjoy buffet-style breakfast in the lobby.", hours: "6 AM - 10 AM" },
+      { id: "3", name: "Swimming Pool", instructions: "Swim at your own risk. Towels available at the poolside.", hours: "8 AM - 8 PM" },
+    ],
+    sqFt: 500,
+    beds: 2,
+    bathrooms: 2,
+    adults: 2,
+    children: 0,
+  },
+  {
+    id: "2",
+    name: "Modern Room",
+    address: "456 Modern Ave.",
+    city: "New York",
+    countryCode: "US",
+    highRate: 220,
+    lowRate: 120,
+    location: { latitude: 40.7128, longitude: -74.0060 },
+    destination: { _id: "2", name: "New York" },
+    propertyCategory: 4,
+    category: "Modern",  // Ajout de la catégorie ici
+    shortDescription: "A sleek and modern room with city views.",
+    thumbNailUrl: "/images/hotels/hotel2.jpg",
+    gallery: ["/images/hotels/hotel2_1.jpg", "/images/hotels/hotel2_2.jpg"],
+    overview: "A modern stay with a perfect view of the skyline.",
+    amenities: [
+      { id: "1", name: "Free Wi-Fi", instructions: "Use your room number to access the Wi-Fi.", hours: "24/7" },
+      { id: "2", name: "Room Service", instructions: "Order food via the room service menu.", hours: "6 AM - 11 PM" },
+      { id: "3", name: "Gym Access", instructions: "Located on the 3rd floor. Open from 5 AM to 10 PM.", hours: "5 AM - 10 PM" },
+    ],
+    sqFt: 350,
+    beds: 1,
+    bathrooms: 1,
+    adults: 2,
+    children: 0,
+  },
+];
