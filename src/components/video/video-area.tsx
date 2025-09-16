@@ -14,7 +14,7 @@ export default function VideoArea() {
               <div className="tp-video-main mb-45">
                 <VideoProvider
                   cls="tp-video-three-play tp-pulse-border p-relative"
-                  videoId="go7QYaQR494"
+                  videoId="V2IqiLnce3k"
                 >
                   <VideoSvg clr="#FAF5EF" />
                 </VideoProvider>
