@@ -29,7 +29,7 @@ export default function SearchTwo() {
                         >
                           <span className="borders"></span>
                           <span className="icon">
-                            <FlightSvg />
+                            <HotelSvg />
                           </span>
                           <span>Shortlets</span>
                         </button>

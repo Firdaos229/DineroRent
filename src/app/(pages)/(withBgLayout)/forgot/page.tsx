@@ -6,7 +6,7 @@ import ForgotForm from "@/components/form/forgot-form";
 
 
 export const metadata: Metadata = {
-    title: "Forgot Page - Housey",
+    title: "Forgot Page - DineroRent",
 };
 
 

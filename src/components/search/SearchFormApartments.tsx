@@ -18,19 +18,25 @@ const initialState = {
   message: '',
 };
 
-const apartmentsList = [
-  "Ocean View Apartment",
-  "City Center Loft",
-  "Mountain Cabin",
-  "Beachfront Condo",
-  // Ajoute les appartements disponibles ici
+// Liste des villes/pays proposées (autocomplete)
+const locationsList = [
+  "Paris, France",
+  "New York, USA",
+  "Tokyo, Japan",
+  "Barcelona, Spain",
+  "Rome, Italy",
+  "Lisbon, Portugal",
+  "London, UK",
+  "Marrakech, Morocco",
+  "Bangkok, Thailand",
+  "Berlin, Germany",
 ];
 
 export default function SearchFormApartments({ style_2 = '', defaultCheckin, defaultCheckout, defaultGuests }: IProps) {
   const [state, formAction] = useActionState(handleSearch, initialState);
 
   const [destination, setDestination] = useState('');
-  const [filteredApartments, setFilteredApartments] = useState<string[]>([]);
+  const [filteredLocations, setFilteredLocations] = useState<string[]>([]);
 
   const [checkin, setCheckin] = useState<Date | null>(defaultCheckin ? new Date(defaultCheckin) : null);
   const [checkout, setCheckout] = useState<Date | null>(defaultCheckout ? new Date(defaultCheckout) : null);
@@ -39,22 +45,26 @@ export default function SearchFormApartments({ style_2 = '', defaultCheckin, def
   const [childGuests, setChildGuests] = useState<number>(0);
   const [rooms, setRooms] = useState<number>(1);
 
+  // Gère la saisie de ville/pays avec suggestions
   const handleDestinationChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const val = e.target.value;
     setDestination(val);
 
     if (val.length > 0) {
-      setFilteredApartments(
-        apartmentsList.filter(appt => appt.toLowerCase().includes(val.toLowerCase()))
+      setFilteredLocations(
+        locationsList.filter(loc =>
+          loc.toLowerCase().includes(val.toLowerCase())
+        )
       );
     } else {
-      setFilteredApartments([]);
+      setFilteredLocations([]);
     }
   };
 
-  const selectApartment = (name: string) => {
+  // Quand une proposition est sélectionnée
+  const selectLocation = (name: string) => {
     setDestination(name);
-    setFilteredApartments([]);
+    setFilteredLocations([]);
   };
 
   return (
@@ -64,26 +74,26 @@ export default function SearchFormApartments({ style_2 = '', defaultCheckin, def
 
           {/* Destination + autocomplete */}
           <div className="tp-hero-form-input relative min-w-[200px] flex-shrink-0">
-            <p className="mb-1 text-sm font-medium">Destination (Apartment)</p>
+            <p className="mb-1 text-sm font-medium">Destination</p>
             <input
               type="text"
               name="destination"
               value={destination}
               onChange={handleDestinationChange}
-              placeholder="Type apartment name"
+              placeholder="Type city or country"
               className={`w-full border rounded px-3 py-2 ${style_2}`}
               autoComplete="off"
               spellCheck={false}
             />
-            {filteredApartments.length > 0 && (
+            {filteredLocations.length > 0 && (
               <ul className="absolute z-10 bg-white border rounded w-full max-h-40 overflow-auto mt-1 shadow">
-                {filteredApartments.map(apt => (
+                {filteredLocations.map(loc => (
                   <li
-                    key={apt}
+                    key={loc}
                     className="px-3 py-2 cursor-pointer hover:bg-blue-100"
-                    onClick={() => selectApartment(apt)}
+                    onClick={() => selectLocation(loc)}
                   >
-                    {apt}
+                    {loc}
                   </li>
                 ))}
               </ul>
@@ -100,7 +110,9 @@ export default function SearchFormApartments({ style_2 = '', defaultCheckin, def
                 cls={style_2}
                 defaultValue={checkin ? checkin.toISOString().split('T')[0] : ''}
               />
-              <span className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none"><Calender /></span>
+              <span>
+                <Calender />
+              </span>
             </div>
           </div>
 
@@ -115,22 +127,22 @@ export default function SearchFormApartments({ style_2 = '', defaultCheckin, def
                 cls={style_2}
                 defaultValue={checkout ? checkout.toISOString().split('T')[0] : ''}
               />
-              <span className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none"><Calender /></span>
+              <span>
+                <Calender />
+              </span>
             </div>
           </div>
 
           {/* GuestSelector (adultes, enfants, rooms) */}
-          <div className="flex-shrink-0">
-            <GuestSelector
-              adultGuests={adultGuests}
-              childGuests={childGuests}
-              rooms={rooms}
-              setAdultGuests={setAdultGuests}
-              setChildGuests={setChildGuests}
-              setRooms={setRooms}
-              toggleCls={style_2}
-            />
-          </div>
+          <GuestSelector
+            adultGuests={adultGuests}
+            childGuests={childGuests}
+            rooms={rooms}
+            setAdultGuests={setAdultGuests}
+            setChildGuests={setChildGuests}
+            setRooms={setRooms}
+            toggleCls={style_2}
+          />
 
           {/* Submit button */}
           <div className="tp-hero-submit-btn-wrap flex-shrink-0">

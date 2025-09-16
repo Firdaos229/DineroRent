@@ -5,7 +5,7 @@ import ResetPasswordForm from "@/components/form/reset-pass-form";
 import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
-    title: "Reset Password - Housey",
+    title: "Reset Password - DineroRent",
 };
 
 type IParams = Promise<{ token: string }>;

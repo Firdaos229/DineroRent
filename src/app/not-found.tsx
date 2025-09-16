@@ -7,7 +7,7 @@ import FooterArea from "@/components/footer/footer-area";
 
 
 export const metadata: Metadata = {
-    title: "Not Found - Acadia",
+    title: "Not Found - DineroRent",
 };
 
 export default function NotFound() {

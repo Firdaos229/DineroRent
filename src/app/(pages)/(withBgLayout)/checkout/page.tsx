@@ -11,7 +11,7 @@ import StripeProvider from "@/components/provider/stripe-provider";
 import axiosInstance from "@/lib/axios";
 
 export const metadata: Metadata = {
-    title: "Checkout Page - Housey",
+    title: "Checkout Page - DineroRent",
 };
 
 type ISearchParams = Promise<{
@@ -53,8 +53,8 @@ export default async function CheckoutPage({
         },
     );
 
-    console.log((await paymentIntent).data,'paymentIntent');
-    const paymentIntentData:string = (await paymentIntent).data;
+    console.log((await paymentIntent).data, 'paymentIntent');
+    const paymentIntentData: string = (await paymentIntent).data;
 
     return (
         <>
