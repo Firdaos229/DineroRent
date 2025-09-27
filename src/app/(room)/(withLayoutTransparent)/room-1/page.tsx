@@ -4,8 +4,11 @@ import BreadcrumbArea from "@/components/breadcrumb/breadcrumb-area";
 import SearchThree from "@/components/search/search-three";
 import RoomOneArea from "@/components/room/room-one-area";
 
+import SearchLayout from "@/components/apartments/SearchLayout";
+import HotelSidebar from "@/components/apartments/HotelSidebar";
+
 export const metadata: Metadata = {
-  title: "Room 1 - Housey",
+  title: "Apartments - DineroRent",
 };
 
 type IParams = Promise<{
@@ -19,29 +22,31 @@ type IParams = Promise<{
 type IProps = {
   searchParams: IParams;
 };
+
 export default async function RoomOnePage({ searchParams }: IProps) {
   const { checkin, checkout, adults, children, searchTerm } =
     (await searchParams) || {};
+
   const hotelData = await getAllHotelRooms();
-  // const hotelData = await getAllHotelRooms(checkin, checkout, adults, children,searchTerm);
+
   return (
     <>
-      {/* breadcrumb area start */}
+      {/* breadcrumb area */}
       <BreadcrumbArea />
-      {/* breadcrumb area end */}
 
-      {/* search area start */}
+      {/* search area */}
       <SearchThree
         defaultCheckin={checkin}
         defaultCheckout={checkout}
         defaultAdults={Number(adults)}
         defaultChildren={Number(children)}
       />
-      {/* search area end */}
 
-      {/* room area start */}
-      <RoomOneArea rooms={hotelData} />
-      {/* room area end */}
+      {/* search layout (sidebar + results) */}
+      <SearchLayout
+        sidebar={<HotelSidebar />}
+        content={<RoomOneArea rooms={hotelData} />}
+      />
     </>
   );
 }

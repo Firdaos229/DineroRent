@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import "./globals.css";
 import "./globals.scss";
-import 'swiper/css/bundle';
+import "swiper/css/bundle";
 import {
   DM_Sans,
   Playfair_Display,
@@ -58,9 +59,7 @@ export default function RootLayout({
       <body
         className={`${dmSans.variable} ${playfairDisplay.variable} ${amita.variable} ${onest.variable} ${outfit.variable} ${parisienne.variable}`}
       >
-        <ContextProvider>
-            {children}
-        </ContextProvider>
+        <ContextProvider>{children}</ContextProvider>
       </body>
     </html>
   );

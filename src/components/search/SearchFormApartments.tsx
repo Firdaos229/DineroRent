@@ -98,9 +98,9 @@ export default function SearchFormApartments({
     <div className="tp-hero-search-form relative max-w-4xl mx-auto">
       <form action={formAction} autoComplete="off" className="space-y-4">
         {/* Row 1: Destination & Guests */}
-        <div className="flex flex-col sm:flex-row gap-6">
+        <div className="flex flex-row flex-nowrap gap-6 w-full overflow-x-auto">
           {/* Destination */}
-          <div className="tp-hero-form-input ">
+          <div className="tp-hero-form-input flex-1 ">
             <p className="mb-1 text-sm font-medium">Destination</p>
             <input
               type="text"
@@ -128,7 +128,7 @@ export default function SearchFormApartments({
           </div>
 
           {/* Guests */}
-          <div className="">
+          <div className="flex-[0_0_calc(50%-1.25rem)]">
             <GuestSelector
               adultGuests={adultGuests}
               childGuests={childGuests}

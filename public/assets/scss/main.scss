@@ -2,3 +2,110 @@
 @forward 'theme';
 @forward 'components';
 @forward 'layout';
+
+
+
+  /* price ranger css*/
+.slider {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.track-slider,
+.range-slider,
+.slider-left-val,
+.slider-right-value {
+  position: absolute;
+}
+
+.track-slider,
+.range-slider {
+ position: absolute;
+  border-radius: 4px;
+  height: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.track-slider {
+  /* background-color: #022140; */
+  width: 100%;
+  z-index: 1;
+}
+
+.range-slider {
+  z-index: 2;
+}
+
+.slider-left-value {
+  left: 6px;
+}
+
+.slider-right-value {
+  right: -4px;
+}
+
+.thumb,
+.thumb::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  pointer-events: all;
+}
+
+.thumb {
+    position: absolute; /* ✅ superposition parfaite */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 36px;
+  pointer-events: none; /* empêche les interactions ici, mais autorise sur le thumb lui-même */
+  background: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.thumb-left {
+  z-index: 3;
+}
+
+.thumb-right {
+  z-index: 4;
+}
+
+.thumb::-webkit-slider-thumb {
+  background-color: #0a0a0a;
+  border-radius: 50%;
+  /* box-shadow: 0 0 1px 1px #f50707; */
+  border: 4px solid #0C6599;
+  cursor: pointer;
+  height: 28px;
+  width: 28px;
+  margin-top: -28px;
+  pointer-events: all;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+.thumb::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.thumb::-moz-range-thumb {
+  background-color: #0a0a0a;
+  border-radius: 50%;
+  /* box-shadow: 0 0 1px 1px #f50707; */
+  border: 4px solid #0C6599;
+  cursor: pointer;
+  height: 28px;
+  width: 28px;
+  margin-top: 4px;
+  pointer-events: all;
+  position: relative;
+}
+
+.multi-slide-input-container {
+  position: relative;
+  width: 100%;
+  height: 33px; /* ajuste selon la hauteur de ton slider */
+}
