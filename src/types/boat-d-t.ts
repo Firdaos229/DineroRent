@@ -1,18 +1,18 @@
-// src/types/boat-d-t.ts
+
 
 export type IBoatRental = {
   id: string;
   title: string;
   description: string;
   rating: number;
-  reviewCount: number;
+  reviewCount?: number;
   city: string;
   country: string;
   location: {
     latitude: number;
     longitude: number;
   };
-  isWishlisted: boolean;
+  isWishlisted?: boolean;
 
   // Specs
   length: number; // en pieds

@@ -15,40 +15,23 @@ export const data = {
     },
     {
       title: "Users",
-      url: "/admin/users",
+      url: "/dashboard/users",
       icon: UsersIcon,
     },
     {
-      title: "Vendors",
-      url: "/admin/vendors",
-      icon: FolderIcon,
-    },
-    {
       title: "Apartments",
-      url: "#",
+      url: "/dashboard/apartments",
       icon: Building2Icon,
-      items: [
-        { title: "All Apartments", url: "/admin/listings/apartments" },
-        { title: "Create Apartment", url: "/admin/listings/apartments/create" },
-      ],
     },
     {
       title: "Cars",
-      url: "#",
+      url: "/dashboard/cars",
       icon: CarIcon,
-      items: [
-        { title: "All Cars", url: "/admin/listings/cars" },
-        { title: "Create Car", url: "/admin/listings/cars/create" },
-      ],
     },
     {
       title: "Boats",
-      url: "#",
+      url: "/dashboard/boats",
       icon: ShipIcon,
-      items: [
-        { title: "All Boats", url: "/admin/listings/boats" },
-        { title: "Create Boat", url: "/admin/listings/boats/create" },
-      ],
     },
     {
       title: "Bookings / Rentals",
@@ -56,23 +39,18 @@ export const data = {
       icon: FileTextIcon,
     },
     {
-      title: "Payments / Escrow",
-      url: "/admin/payments",
+      title: "Payments Transactions",
+      url: "/dashboard/payments",
       icon: CreditCardIcon,
     },
     {
-      title: "Reviews",
-      url: "/admin/reviews",
-      icon: MessageSquareIcon,
-    },
-    {
       title: "Site Settings",
-      url: "/admin/settings",
+      url: "#",
       icon: SlidersHorizontalIcon,
       items: [
-        { title: "General Settings", url: "/admin/settings" },
-        { title: "Advertisements", url: "/admin/ads" },
-        { title: "Site Policies & Legal", url: "/admin/legal" },
+        { title: "General Settings", url: "/dashboard/settings" },
+        { title: "Advertisements", url: "/dashboard/ads" },
+        { title: "Site Policies & Legal", url: "/dashboard/legal" },
       ],
     },
   ],
@@ -80,7 +58,7 @@ export const data = {
   documents: [
     {
       name: "Reports",
-      url: "/admin/reports",
+      url: "/dashboard/reports",
       icon: ClipboardListIcon,
     },
   ],
@@ -88,13 +66,8 @@ export const data = {
   navSecondary: [
     {
       title: "FAQ & Help Center",
-      url: "/admin/faq",
+      url: "/dashboard/faq",
       icon: HelpCircleIcon,
-    },
-    {
-      title: "Analytics",
-      url: "/admin/analytics",
-      icon: BarChartIcon,
     },
   ],
 };

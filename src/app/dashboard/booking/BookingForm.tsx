@@ -1,5 +1,3 @@
-// app/dashboard/bookings/components/BookingForm.tsx
-
 "use client";
 
 export function BookingForm() {

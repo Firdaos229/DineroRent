@@ -20,7 +20,6 @@ import {
 
 import { Button } from "@/components/ui/button";
 import {
-  Badge,
   ChevronLeftIcon,
   ChevronRightIcon,
   ChevronsLeftIcon,
@@ -53,9 +52,10 @@ type ReusableDataTableProps<TData> = {
   showActions?: boolean;
   onEdit?: (row: TData) => void;
   onDelete?: (row: TData) => void;
+  onView?: (row: TData) => void;
 };
 
-export function ReusableDataTable<TData extends { id: string }>({
+export function ReusableDataTable<TData extends { id: string | number }>({
   data,
   columns,
   onAdd,
@@ -63,6 +63,7 @@ export function ReusableDataTable<TData extends { id: string }>({
   showActions = true,
   onEdit,
   onDelete,
+  onView,
 }: ReusableDataTableProps<TData>) {
   const [pagination, setPagination] = React.useState({
     pageIndex: 0,
@@ -112,7 +113,11 @@ export function ReusableDataTable<TData extends { id: string }>({
               Edit
             </DropdownMenuItem>
           )}
-          <DropdownMenuItem>View details</DropdownMenuItem>
+          {onView && (
+            <DropdownMenuItem onClick={() => onView(row.original)}>
+              View details
+            </DropdownMenuItem>
+          )}
           {onDelete && (
             <>
               <DropdownMenuSeparator />

@@ -9,18 +9,19 @@ export type IHotelRoom = {
   countryCode: string;
   highRate: number;
   lowRate: number;
-  location: {
-    latitude: number;
-    longitude: number;
+  location?: {
+    latitude?: number;
+    longitude?: number;
   };
-  destination: {
-    _id: string;
-    name: string;
+  destination?: {
+    _id?: string;
+    name?: string;
   };
   propertyCategory: number;
   shortDescription: string;
   thumbNailUrl: string;
-  gallery: string[];
+  gallery: string[];           
+  video?: string | null;             
   overview: string;
   amenities: IAmenities[];
   sqFt: number;
