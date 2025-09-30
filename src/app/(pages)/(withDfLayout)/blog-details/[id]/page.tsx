@@ -61,16 +61,10 @@
 // }
 // src/app/blog-details/[id]/page.tsx
 
-interface PageProps {
-  params: {
-    id: string;
-  };
-}
-
-export default function BlogDetailsPage({ params }: PageProps) {
+export default function BlogDetailsPage() {
   return (
     <main>
-      <h1>Blog ID: {params.id}</h1>
+      <h1>Blog ID: bgid</h1>
       <p>This is a simple blog details page.</p>
     </main>
   );
