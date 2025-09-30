@@ -19,7 +19,9 @@ export default async function CarDetailsPage({
     return (
       <div className="container py-50">
         <h2>Car not found</h2>
-        <p>The car you're looking for doesn't exist or was removed.</p>
+        <p>
+          The car you&apos;re looking for doesn&apos;t exist or was removed.
+        </p>
       </div>
     );
   }
