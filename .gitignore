@@ -41,3 +41,6 @@ next-env.d.ts
 
 # .gitignore
 public/_next-video/
+
+.next/
+**/*.d.ts
