@@ -1,4 +1,6 @@
 "use client";
+
+import { heroBanner } from "@/data/ads-data";
 import SearchTwo from "../search/search-two";
 
 export default function HeroBannerFive() {
@@ -14,7 +16,7 @@ export default function HeroBannerFive() {
             backgroundSize: "cover",
           }}
         >
-          <video src={"/assets/video/sea-video.mp4"} loop autoPlay muted />
+          <video src={heroBanner.videoUrl} loop autoPlay muted />
         </div>
       </div>
       <div className="tp-hero-five-bottom">
@@ -22,8 +24,8 @@ export default function HeroBannerFive() {
           <div className="row justify-content-center">
             <div className="col-xxl-10 col-xl-11 col-12">
               <div className="tp-hero-five-content mb-40">
-                <h2 className="tp-hero-five-title mb-5">Welcome to DineroRent</h2>
-                <p>Find Shortlets, Apartments, Cars & Boats</p>
+                <h2 className="tp-hero-five-title mb-5">{heroBanner.title}</h2>
+                <p>{heroBanner.subtitle}</p>
               </div>
             </div>
           </div>

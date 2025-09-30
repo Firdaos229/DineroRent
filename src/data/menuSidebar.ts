@@ -48,6 +48,7 @@ export const data = {
       url: "#",
       icon: SlidersHorizontalIcon,
       items: [
+        { title: "Blog", url: "/dashboard/blog" },
         { title: "General Settings", url: "/dashboard/settings" },
         { title: "Advertisements", url: "/dashboard/ads" },
         { title: "Site Policies & Legal", url: "/dashboard/legal" },

@@ -1,5 +1,5 @@
 export type UserRole = "admin" | "vendor" | "user";
-export type UserStatus = "active" | "pending" | "suspended";
+export type UserStatus = "approve" | "suspend" | "verify";
 
 export interface IUser {
   id: string;

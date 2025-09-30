@@ -33,8 +33,6 @@ export default function DashboardPage() {
       <ReusableDataTable
         data={bookings}
         columns={columns}
-        addLabel="New Booking"
-        onAdd={() => setIsSheetOpen(true)}
         onEdit={(row) => console.log("Edit", row)}
         onDelete={handleDelete}
       />
