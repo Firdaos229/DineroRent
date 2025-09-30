@@ -46,7 +46,7 @@ import {
 
 type ReusableDataTableProps<TData> = {
   data: TData[];
-  columns: ColumnDef<TData, any>[];
+  columns: ColumnDef<TData, unknown>[];
   onAdd?: () => void;
   addLabel?: string;
   showActions?: boolean;

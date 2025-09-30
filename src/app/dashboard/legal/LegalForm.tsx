@@ -56,8 +56,8 @@ export function LegalForm({ defaultValue, onSave }: Props) {
       <Label htmlFor="category">Category</Label>
       <Select
         value={formData.category}
-        onValueChange={(value) =>
-          setFormData((prev) => ({ ...prev, category: value as any }))
+        onValueChange={(value: ILegalDocument["category"]) =>
+          setFormData((prev) => ({ ...prev, category: value }))
         }
       >
         <SelectTrigger id="category">
